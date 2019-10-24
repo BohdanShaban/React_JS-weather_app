@@ -1,0 +1,97 @@
+*{
+    /* border: 2px solid rebeccapurple; */
+
+}
+
+.wrapper {
+
+
+    /* viewport height = 100% -> relative units of measurement */
+    height: 100vh; 
+
+    display: flex; /* All In Rows  */        
+    justify-content: center; /* By Rows */
+    align-items: center;    /*   By Cols  */
+
+    background-color: aqua;
+    
+}
+
+.main {
+
+    height: 55vh;
+    width: 60%;
+
+    background-color:azure ;  
+
+    margin: 0 auto;
+}
+
+.info {
+
+    background: url("../src/img/3.jpg") center center no-repeat;
+    height: 55vh;
+
+    display: flex; /* All In Rows  */        
+    justify-content: center; /* By Rows */
+    align-items: center;    /*   By Cols  */
+    text-align: center;
+    color:black;
+
+
+
+}
+
+.weather {
+
+
+}
+
+button {
+  border: 2px solid #103a65;
+  border-bottom: 4px solid #103a65;
+  padding: 8px 20px;
+  margin: 0 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #235d9c;
+  color: #fff;
+  outline: none!important;
+}
+
+button:hover {
+  border-bottom: 2px solid #103a65;
+  position: relative;
+  top: 2px;
+}
+
+button:active {
+  border-bottom: 2px solid transparent;
+  border-color: transparent;
+  position: relative;
+  top: 2px;
+}   
+
+
+  
+input[type="text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 2px #113a65;
+    width: 50%;
+    padding-bottom: 4px;
+    color: #fff;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    font-size: 20px;
+    outline: none;
+}
+  
+input::-webkit-input-placeholder {
+    color: #103a65;
+}
+  
+input::-moz-placeholder {
+    color: #103a65;
+}
