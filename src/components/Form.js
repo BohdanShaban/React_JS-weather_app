@@ -1,6 +1,4 @@
 import React from "react";  
-
-
 class Form extends React.Component {    
 
     
@@ -8,18 +6,17 @@ class Form extends React.Component {
 
         // CAN RETUTN ONLY ONE PARRENT ELEMENT
         return(
-            
-            
-            <form onSubmit= {this.props.weatherMethod} >
 
-                <input type= "text" name= "city" placeholder= "city" />
-                <button> Get Wether </button>
+            <div class="input__form">
+                <form onSubmit= {this.props.weatherMethod} >
 
-            </form>
+                    <input type= "text" name= "city" placeholder= "city" />
+                    <button> Get Wether </button>
+
+                </form>
+            </div>
         )
     }
 }
 
-
 export default Form;
-// import Form from "./components/info.js"

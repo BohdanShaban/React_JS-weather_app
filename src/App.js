@@ -1,10 +1,8 @@
 import React from "react";
 
-// import COMPONENTS
 import Info from "./components/Info.js"
 import Form from "./components/Form.js"
 import Weather from "./components/Weather.js"
-// import { async } from "q";
 
 // API KEY
 const API_KEY = "fec3d813e8930919b9f55a93b65ad231"; //https://openweathermap.org
@@ -12,16 +10,6 @@ const API_KEY = "fec3d813e8930919b9f55a93b65ad231"; //https://openweathermap.org
 
 
 class App extends React.Component {
-
-  // state = {
-
-  //   city: undefined,
-  //   temp: undefined,
-  //   sunrise: undefined,
-  //   sunset: undefined,
-
-  //   error: undefined
-  // }
 
   constructor(props) {
 
@@ -39,9 +27,7 @@ class App extends React.Component {
 
   }
 
-  // NEED FOR ASYNCRON CALLING / ON BACKGROUND / WITHOUT PAGE RELOADING
    gettingWeather = async (event) => {
-
     event.preventDefault();
 
     const city = event.target.elements.city.value ;
@@ -102,7 +88,6 @@ class App extends React.Component {
         // ONE GENERAL/PARRENT TAG CAN BE RETURNED
         <div className="wrapper"> 
           <div className="main">
-
 
             <div className="container">
                 <div className="row">

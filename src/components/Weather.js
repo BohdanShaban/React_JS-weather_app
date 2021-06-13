@@ -2,11 +2,6 @@ import React from "react";
 
 class Weather extends React.Component {
 
-    // constructor(props) {
-
-    //     super(props);
-    // }
-
     render() {
 
         // CAN RETUTN ONLY ONE PARRENT ELEMENT
@@ -15,8 +10,6 @@ class Weather extends React.Component {
              // ONE GENERAL/PARRENT TAG CAN BE RETURNED
              
             <div className='weather'>
-               
-               
 
                 { this.props.city  &&
 
@@ -34,14 +27,9 @@ class Weather extends React.Component {
                 {/* IF CITY IS NOT CHOSEN */}
                 <p> {this.props.error} </p>
                
-                
-               
-
             </div>
         )
     }
 }
 
-
 export default Weather;
-// import Weather from "./components/info.js"
