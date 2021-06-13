@@ -22,7 +22,7 @@
     height: 55vh;
     width: 60%;
 
-    background-color:azure ;  
+    background-color:yellow ;  
 
     margin: 0 auto;
 }
@@ -80,7 +80,7 @@ input[type="text"] {
     border-bottom: solid 2px #113a65;
     width: 50%;
     padding-bottom: 4px;
-    color: #fff;
+    color: black;
     font-weight: lighter;
     margin-bottom: 30px;
     margin-right: 20px;
