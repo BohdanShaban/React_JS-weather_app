@@ -1,35 +1,25 @@
 import React from "react";
 
-class Weather extends React.Component {
+const Weather = ({city, temp, sunrise, sunset, error}) => {
 
-    render() {
-
-        // CAN RETUTN ONLY ONE PARRENT ELEMENT
-        return(
-
-             // ONE GENERAL/PARRENT TAG CAN BE RETURNED
+    return(
              
-            <div className='weather'>
+        <div className='weather'>
 
-                { this.props.city  &&
+            { city  &&
 
-                    <div>
-
-                        {/* <p>  {this.props.city} </p> */}
-                        <p> Temperature: {this.props.temp} &deg;C </p>  
-                        <p> Sunrise: {this.props.sunrise} am </p>  
-                        <p> Sunset: {this.props.sunset} pm </p>  
-
-
-                    </div>
-                }
-                
-                {/* IF CITY IS NOT CHOSEN */}
-                <p> {this.props.error} </p>
-               
-            </div>
-        )
-    }
+                <div>
+                    <p> Temperature: {temp} &deg;C </p>  
+                    <p> Sunrise: {sunrise} am </p>  
+                    <p> Sunset: {sunset} pm </p>  
+                </div>
+            }
+            
+            {/* IF CITY IS NOT CHOSEN */}
+            <p> {error} </p>
+           
+        </div>
+    )
 }
 
 export default Weather;

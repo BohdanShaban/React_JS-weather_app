@@ -1,36 +1,32 @@
-import React from "react";
+import React, {Component} from "react";
 
 import Info from "./components/Info.js"
 import Form from "./components/Form.js"
 import Weather from "./components/Weather.js"
+
+import"./App.css";
 
 // API KEY
 const API_KEY = "fec3d813e8930919b9f55a93b65ad231"; //https://openweathermap.org
 // https://openweathermap.org/current -> DOCUMENTATION
 
 
-class App extends React.Component {
+export default class App extends Component {
 
-  constructor(props) {
+  state = {
+    city: undefined,
+    temp: undefined,
+    sunrise: undefined,
+    sunset: undefined,
 
-    super(props);
-    // STATE
-    this.state = {
-
-      city: undefined,
-      temp: undefined,
-      sunrise: undefined,
-      sunset: undefined,
-  
-      error: undefined
-    }
-
+    error: undefined
   }
 
-   gettingWeather = async (event) => {
-    event.preventDefault();
 
-    const city = event.target.elements.city.value ;
+  getWeather = async (e) => {
+    e.preventDefault();
+
+    const city = e.target.elements.city.value ;
 
     if( city ) {
 
@@ -66,7 +62,6 @@ class App extends React.Component {
       
     }
     else {
-
       this.setState( {
 
         city: undefined,
@@ -75,50 +70,41 @@ class App extends React.Component {
         sunset: undefined,
 
         error: "Choose the city"
-    } );
-    
+      });
     }
+
   }
 
-    render() {
+  render() {
 
-      // CAN RETUTN ONLY ONE PARRENT ELEMENT
-      return( 
+    const {city, temp, sunrise, sunset, error} = this.state;
 
-        // ONE GENERAL/PARRENT TAG CAN BE RETURNED
-        <div className="wrapper"> 
-          <div className="main">
+    return( 
 
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm-5 info ">
+      <div className="wrapper"> 
+        <div className="main">
+
+          <div className="container">
+              <div className="row">
+                  <div className="col-sm-5 info ">
                     < Info />
 
                     </div>
 
-                    <div className="col-sm-7 form " >
-                      < Form weatherMethod= {this.gettingWeather} />
-                      < Weather   
-                                  city = {this.state.city}
-                                  temp = {this.state.temp}
-                                  sunrise = {this.state.sunrise}
-                                  sunset = {this.state.sunset}
-
-                                  error = {this.state.error}
-                          />
+                      <div className="col-sm-7 form " >
+                        < Form getWeather= {this.getWeather} />
+                        < Weather   
+                                    city = {city}
+                                    temp = {temp}
+                                    sunrise = {sunrise}
+                                    sunset = {sunset}
+                                    error = {error}
+                        />
+                      </div>
                     </div>
-                </div>
-            </div>
-          
-          
-          </div>
-          
-        </div>
-        
-      )
+                  </div>
+            </div> 
+      </div> /*  wrapper  */
+    )
   }
 }
-
-export default App;
-
-// weatherMethod= {this.gettingWeather}

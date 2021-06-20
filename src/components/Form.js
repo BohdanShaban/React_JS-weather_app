@@ -1,22 +1,19 @@
-import React from "react";  
-class Form extends React.Component {    
+import React from "react";
+
+const Form = ( {getWeather} ) => {    
 
     
-    render() {
+    return(
 
-        // CAN RETUTN ONLY ONE PARRENT ELEMENT
-        return(
+        <div className="input__form">
+            <form onSubmit= {getWeather} >
 
-            <div class="input__form">
-                <form onSubmit= {this.props.weatherMethod} >
+                <input type= "text" name= "city" placeholder= "Type the city ..."/>
+                <button> Get Wether </button>
 
-                    <input type= "text" name= "city" placeholder= "city" />
-                    <button> Get Wether </button>
-
-                </form>
-            </div>
-        )
-    }
+            </form>
+        </div>
+    )
 }
 
 export default Form;
